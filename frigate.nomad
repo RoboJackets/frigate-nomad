@@ -127,7 +127,7 @@ job "frigate" {
       }
 
       resources {
-        cpu = 10000
+        cpu = 1000
         memory = 4096
         memory_max = 8192
       }
@@ -180,7 +180,7 @@ job "frigate" {
       }
 
       resources {
-        cpu = 10000
+        cpu = 1000
         memory = 4096
         memory_max = 8192
       }
@@ -224,6 +224,7 @@ job "frigate" {
           nginx-config-5 = substr(local.nginx_configuration, 2555, 511)
           nginx-config-6 = substr(local.nginx_configuration, 3066, 511)
           nginx-config-7 = substr(local.nginx_configuration, 3577, 511)
+          nginx-config-8 = substr(local.nginx_configuration, 4088, 511)
           firewall-rules = jsonencode(["internet"])
         }
       }
