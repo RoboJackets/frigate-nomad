@@ -254,7 +254,7 @@ job "frigate" {
 
         check_restart {
           limit = 5
-          grace = "30s"
+          grace = "60s"
         }
       }
 
@@ -283,7 +283,7 @@ job "frigate" {
 
         check_restart {
           limit = 5
-          grace = "30s"
+          grace = "60s"
         }
       }
 
@@ -314,7 +314,7 @@ job "frigate" {
 
         check_restart {
           limit = 5
-          grace = "30s"
+          grace = "60s"
         }
       }
 
@@ -345,7 +345,7 @@ job "frigate" {
 
         check_restart {
           limit = 5
-          grace = "30s"
+          grace = "60s"
         }
       }
 
