@@ -111,7 +111,7 @@ job "frigate" {
           "-xeuo",
           "pipefail",
           "-c",
-          "mkdir --parents /assets/frigate-nginx/ && cp --recursive --verbose web/* /assets/frigate-nginx/"
+          "mkdir --parents /assets/frigate-api/ && cp --recursive --verbose web/* /assets/frigate-api/"
         ]
 
         mount {
@@ -214,19 +214,6 @@ job "frigate" {
           limit = 5
           grace = "30s"
         }
-
-        meta {
-          nginx-config = substr(local.nginx_configuration, 0, 511)
-          nginx-config-1 = substr(local.nginx_configuration, 511, 511)
-          nginx-config-2 = substr(local.nginx_configuration, 1022, 511)
-          nginx-config-3 = substr(local.nginx_configuration, 1533, 511)
-          nginx-config-4 = substr(local.nginx_configuration, 2044, 511)
-          nginx-config-5 = substr(local.nginx_configuration, 2555, 511)
-          nginx-config-6 = substr(local.nginx_configuration, 3066, 511)
-          nginx-config-7 = substr(local.nginx_configuration, 3577, 511)
-          nginx-config-8 = substr(local.nginx_configuration, 4088, 511)
-          firewall-rules = jsonencode(["internet"])
-        }
       }
 
       service {
@@ -315,6 +302,19 @@ job "frigate" {
         check_restart {
           limit = 5
           grace = "300s"
+        }
+
+        meta {
+          nginx-config = substr(local.nginx_configuration, 0, 511)
+          nginx-config-1 = substr(local.nginx_configuration, 511, 511)
+          nginx-config-2 = substr(local.nginx_configuration, 1022, 511)
+          nginx-config-3 = substr(local.nginx_configuration, 1533, 511)
+          nginx-config-4 = substr(local.nginx_configuration, 2044, 511)
+          nginx-config-5 = substr(local.nginx_configuration, 2555, 511)
+          nginx-config-6 = substr(local.nginx_configuration, 3066, 511)
+          nginx-config-7 = substr(local.nginx_configuration, 3577, 511)
+          nginx-config-8 = substr(local.nginx_configuration, 4088, 511)
+          firewall-rules = jsonencode(["internet"])
         }
       }
 
