@@ -357,6 +357,7 @@ job "frigate" {
           nginx-config-6 = substr(local.api_configuration, 3066, 511)
           nginx-config-7 = substr(local.api_configuration, 3577, 511)
           nginx-config-8 = substr(local.api_configuration, 4088, 511)
+          nginx-config-9 = substr(local.api_configuration, 4599, 511)
           firewall-rules = jsonencode(["internet"])
         }
       }
