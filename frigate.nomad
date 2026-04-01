@@ -330,7 +330,7 @@ job "frigate" {
 
         check {
           success_before_passing = 3
-          failures_before_critical = 2
+          failures_before_critical = 10
 
           interval = "1s"
 
